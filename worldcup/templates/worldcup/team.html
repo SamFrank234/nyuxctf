@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+    </head>
+    <body>
+        <h1> {{team.f_name}} - {{team.country}}</h1>
+        <h3>Group {{team.group}} Standings:</h3>
+        {% include 'worldcup/group.html' with teams=group %}
+        <h3> Recent Results</h3>
+        <ul>
+            {% for match in results %}
+            <li>
+                <a href="/worldcup/match/{{match.id}}">{{match.away_team}} {{match.away_goals}} - {{match.home_goals}} {{match.home_team}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <h3> Upcoming</h3>
+        <ul>
+            {% for match in upcoming %}
+            <li>
+                <a href="/worldcup/match/{{match.id}}">{{match}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

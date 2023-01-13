@@ -1,0 +1,28 @@
+<table>
+    <tr class="col">
+        <th>#</th>
+        <th>Team</th>
+        <th>GP</th>
+        <th>W</th>
+        <th>D</th>
+        <th>L</th>
+        <th>GD</th>
+        <th>PTS</th>
+    </tr>
+    {% for team in teams %}
+    <tr class="wpos" >
+        <td>{{team.pos}}</td>
+        <td><a href="/worldcup/teams/{{team.name}}">{{team.name}}</a></td>
+        <td>{{team.gp}}</td>
+        <td>{{team.w}}</td>
+        <td>{{team.d}}</td>
+        <td>{{team.l}}</td>
+        <td>{{team.gd}}</td>
+        <td>{{team.pts}}</td>
+    </tr>
+    {%endfor%}
+</table>
+
+<script>
+
+</script>

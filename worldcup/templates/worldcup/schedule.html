@@ -1,0 +1,43 @@
+{%extends 'worldcup/base.html'%}
+
+{%block left%}
+    <h3> Live Matches: </h3>
+    {%if live%} 
+        <ul>
+            {% for match in live %}
+                <li>
+                    <a href="/worldcup/live/{{match.id}}""> {{match}} </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {%else%}
+        <p> There are no live matches currently</p>
+    {% endif %}
+{%endblock%}
+
+{%block right%}
+    <h3> Upcoming Matches: </h3>
+    {%if upcoming%} 
+        <ul>
+            {% for match in upcoming %}
+                <li>
+                    <a href="/worldcup/match/{{match.id}}"> {{match}} </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {%else%}
+        <p> There are no upcoming matches</p>
+    {% endif %}
+    <h3> Results: </h3>
+    {%if past%} 
+        <ul>
+            {% for match in past %}
+                <li>
+                    <a href="/worldcup/match/{{match.id}}"> {{match}} </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {%else%}
+        <p> There are no results</p>
+    {% endif %}
+{%endblock%}

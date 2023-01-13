@@ -1,0 +1,41 @@
+{%extends 'worldcup/base.html'%}
+
+{% block left %}
+    <div id="group_a">
+        <h3> GROUP A:</h3>
+        {% include 'worldcup/group.html' with teams=A %}
+        </div>
+        <div id="group_b">
+        <h3> GROUP B:</h3>
+        {% include 'worldcup/group.html' with teams=B %}
+        </div>
+        <div id="group_c">
+        <h3> GROUP C:</h3>
+        {% include 'worldcup/group.html' with teams=C %}
+        </div>
+        <div id="group_d">
+        <h3> GROUP D:</h3>
+        {% include 'worldcup/group.html' with teams=D %}
+        </div>
+{% endblock %}
+
+{% block right %}
+    <div> 
+        <h3>Recent Matches:</h3>
+        <ul>
+            {% for match in results %}
+            <li>
+                <a href="/worldcup/match/{{match.id}}">{{match.away_team}} {{match.away_goals}} - {{match.home_goals}} {{match.home_team}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <h3>Upcoming Matches:</h3>
+        <ul>
+            {% for match in upcoming %}
+            <li>
+                <a href="/worldcup/match/{{match.id}}">{{match}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

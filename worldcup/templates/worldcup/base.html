@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            .float-container {
+                border: 3px solid #fff;
+                padding: 20px;
+            }
+
+            .float-child-left {
+                width: 46%;
+                float: left;
+                padding: 20px;
+                border: 2px solid red;
+            } 
+            .float-child-right {
+                width: 46%;
+                float: right;
+                padding: 20px;
+                border: 2px solid red;
+            } 
+            h1{
+                text-align: center;
+                padding-top: 5%;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1> NYU XC FIFA WORLD CUP</h1>
+        <div class="float-container">
+
+            <div class="float-child-left">
+                {%block left%}
+                {%endblock%}
+            </div>
+            
+            <div class="float-child-right">
+                {%block right%}
+                {%endblock%}
+            </div>
+            
+        </div>
+        <div style="padding-top: 15%;">
+            {% block content %}
+            {%endblock%}
+        </div>
+</body>
+
+</html>

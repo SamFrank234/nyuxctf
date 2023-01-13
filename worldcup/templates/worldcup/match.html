@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+    </head>
+    <body>
+    
+        <h1>{{match}}</h1>
+        {%if match.complete%}
+        <p>{{match.date}}</p>
+        <h3>{{match.away_team}} {{match.away_goals}} - {{match.home_team}} {{match.home_goals}}</h3>
+        {%else%}
+        <p>This match has not been played yet</p>
+        {%endif%}
+    </body>
+</html>
